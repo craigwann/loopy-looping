@@ -5,3 +5,10 @@
 #fun-responses {
   display: none;
 }
+input[type=checkbox] {
+  margin-right: 10px;
+}
+
+#result1, #result2, #result3 {
+  display:none;
+}
