@@ -8,21 +8,19 @@ $(function(){
     console.log(sentenceArray);
 
     for (var i = 0; i < sentenceArray.length; i++) {
-      for (var i = 0; i < vowels.length; i++) {
-        if (sentenceArray.toString() === vowels.toString()) {
-          console.log(true);
-        };
-      };
+      for (var vowel = 0; vowel < vowels.length; vowel++) {
+        if (sentenceArray[i] === vowels[vowel]) {
+          vowel = vowels.length;
+          sentenceArray[i] = "-";
+          console.log(sentenceArray);
+        }
+      }
+    }
 
-      console.log(sentenceArray);
-
-    };
-
-    // var puzzleSentence = sentenceArray.splice(vowels, 1, "-");
-    // console.log(puzzleSentence);
-
-    // var sentenceAdjust = sentenceArray.join("");
-    // console.log(sentenceAdjust);
+    var sentenceAdjust = sentenceArray.join("");
+    console.log(sentenceAdjust);
+    $("#result").append(sentenceAdjust);
+    $("#puzzleForm").hide();
 
     event.preventDefault();
   });
